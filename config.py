@@ -17,5 +17,17 @@ class ProdConfig:
     API_KEY = os.environ.get('API_KEY')
     
     
+class DevConfig(Config):
+    DEBUG=True\
+        
+        
+        
+config_options={
+    'development'= DevConfig,
+    'production'= DevConfig
+}
+    
+    
+    
     
     
