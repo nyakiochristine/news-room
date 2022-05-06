@@ -21,6 +21,16 @@ def configure_request(app):
     
 def search_news(word):
     search_news_url = BASE_SEARCH_URL.format(word,api_key)
+    with urllib.request.urlopen(search_news_url) as search_news:
+        search_news_info= search_news.read()
+        search_news_info_dict = json.loads(search_news_info)
+        
+        
+        search_news_results= None
+        
+        if search_news_info_dict['articles']
+            search_news_list = search_news_info_dict['articles']
+            search_news_results = (search_news_list)
 
 
-
+    return search_news_results
