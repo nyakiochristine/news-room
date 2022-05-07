@@ -42,9 +42,26 @@ def process_sources(sources):
         category = source['category']
         
         if url:
-            source_object = Sources(id, name, description, url, country, language)
+            source_object = Sources(id, name, description, url, country, language, category)
             sources_list.append(source_object)
         return sources_list
+    
+    
+def get_articles(id):
+    articles_url = BASE_ARTICLES_URL.format(id,api_key)
+    with urllib.request.urlopen(articles_url) as articles:
+        articles_info = articles.read()
+        articles_info_dict = json.loads(articles_info)
+        
+        articles_results = None
+        
+        if articles_info_dict['articles']:
+            articles_list = articles_info_dict['articles']
+            articles_results = process_articles(articles_list)
+        return articles_results
+    
+    
+def process_articles(articles)
     
         
         
