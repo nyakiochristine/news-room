@@ -31,6 +31,20 @@ def get_sources():
     
     
 def process_sources(sources):
+    sources_list = []
+    for source in sources:
+        id = source['id']
+        name = source['name']
+        description = source['description']
+        url = source['url']
+        country = source['country']
+        language = source['language']
+        category = source['category']
+        
+        if url:
+            source_object = Sources(id, name, description, url, country, language)
+            sources_list.append(source_object)
+        return sources_list
     
         
         
