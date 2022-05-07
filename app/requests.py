@@ -61,7 +61,21 @@ def get_articles(id):
         return articles_results
     
     
-def process_articles(articles)
+def process_articles(info):
+    articles_results = []
+    for article in info['articles']:
+        image = article['urlToImage']
+        description = article['description']
+        time= article['publishedAt']
+        url = article['url']
+        title = article['title']
+        author = article['author']
+        
+        if time:
+            articles_object = Articles(image, description,time,url,title,author)
+            articles_results.append(articles_object)
+        
+    
     
         
         
