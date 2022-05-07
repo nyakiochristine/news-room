@@ -1,7 +1,11 @@
+from datetime import time
+
+
 class Articles:
-    def __init__(self,image,decription,url,title,author):
+    def __init__(self,image,description,url,title,author):
         self.image = image
-        self.decription =ription
+        self.decription =description
+        self.time= time
         self.url = url
         self.title = title
         self.author = author
