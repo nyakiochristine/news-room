@@ -75,6 +75,17 @@ def process_articles(info):
             articles_object = Articles(image, description,time,url,title,author)
             articles_results.append(articles_object)
         
+def get_articles_category(category):
+    category_url = BASE_CATEGORY_URL.format(category,api_key)
+    with urllib.request.urlopen(category_url) as category_news:
+        category_info = category_news.read()
+        category_info_dict =json.loads(category_info)
+        category_results = None
+        
+        if category_info_dict['articles']:
+            category_list = category_info_dict['articles']
+            category_results = process_articles(category_list)
+        return category_results
     
     
         

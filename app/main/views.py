@@ -1,12 +1,20 @@
 
 
-from flask import render_template
+from flask import render_template, request,redirect, url_for
 import flask
-from . import main
+from app import main
+from ..requests import get_sources,get_news_articles, search_news
 
 @main.route('/')
 def index():
     title = 'NewsRoom'
+    sources = get_sources
+    search_news =request.args.get('news-query')
+    if search_news :
+        return redirect(url_for('.search',word=search_news))
+    else :return render_template('index.html',title=title,sources=sources)
+    
+    
 
 
 
