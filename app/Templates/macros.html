@@ -1,0 +1,28 @@
+
+{%macro showSearchlist(info) %}{% for news in info%}
+<div>
+    <h2>{{news.title}}</h2>
+    <p>{{news.description}}</p>
+    <img src="{{news.image}}" alt="" width="300" height=""/>
+    <p>{{news.time}}
+        <a href="{{news.url}}" target="_blank">Read More</a>
+
+</div>
+{%endfor%} {% endmacro %}
+{% macro showArticles(articles) %}
+<div class="container arts">
+    {%for article in articles %}
+    <div class="artss">
+        <h5>{{article.title}}</h5>
+        <p>{{article.description}}</p>
+        <a href="{{article.url}}">Read More</a>
+        <p>Posted on {{article.time}}</p>
+
+    </div>
+    <div class="img">
+        <img class="img-fluid" src="{{article.image}}"></img>
+    </div>
+    {%endfor%}
+</div>
+{% endblock %}
+    
