@@ -1,22 +1,22 @@
-{%end block%}
+{%endblock%}
 <h2> Receive News from ...</h2>
 <div class="card cardss" style="width: 18rem;">
     {%for source in sources%}
     <div class="card-body">
         <h4 class="card-title">
-            <a href="{{ sources.url }}">{{ sources.name }}</a>
+            <a href="{{ source.url }}">{{ source.name }}</a>
         </h4>
             <br />
-            <h5 class="card-subtitle">{{ sources.author }}</h5>
-            <p class="card-text">{{ sources.description }}</p>
+            <h5 class="card-subtitle">{{ source.author }}</h5>
+            <p class="card-text">{{ source.description }}</p>
 
     </div>
     <p>
-    <span class="lan">{{ sources.language }}</span>
-    <span class= "category">{{ sources.category }}</span>
+    <span class="lan">{{ source.language }}</span>
+    <span class= "category">{{ source.category }}</span>
     </p>
     <div class="links">
-        <a href="{{ sources.url }}" class="card-link role="button">{{sources.name}}</a
+        <a href="{{ source.url }}" class="card-link role="button">{{sources.name}}</a>
     </div>
 
 </div>
