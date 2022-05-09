@@ -1,0 +1,18 @@
+{% extends "base.html"%} {% block content %} {% block styles %} {{super ()}}
+<h2>Trending Now</h2>
+<div class="container articles">
+    {%for article in articles%}
+    <div class="arts">
+        <h5>{{article.title}}</h5>
+        <p>{{article.description}}</p>
+        <br>
+        <a href="{{article.url}}">Read More</a>
+        <p>{{article.time |truncated(15)}}
+    </div>
+    <div class="image">
+        <img class="img-fluid" src="{{article.image}}" alt=""></img>
+
+    </div>
+    _{%endfor%}
+</div>
+{%endblock%}
