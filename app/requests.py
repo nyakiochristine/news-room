@@ -11,8 +11,7 @@ BASE_SEARCH_URL = None
 
 
 def configure_request(app):
-    global api_key,BASE_SOURCE_URL,BASE_ARTICLES_URL,BASE_CATEGORY_,BASE_SEARCH_URL
-    api_key = app.config('API_KEY')
+    global api_key,BASE_SOURCES_URL,BASE_ARTICLES_URL,BASE_CATEGORY_,BASE_SEARCH_URL
     BASE_SOURCES_URL = app.config['SOURCES_URL']
     BASE_ARTICLES_URL = app.config['ARTICLE_URL']
     BASE_CATEGORY_URL = app.config['CATEGORY_URL']

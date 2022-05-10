@@ -3,7 +3,7 @@
 from flask import render_template, request,redirect, url_for
 import flask
 from . import main
-from ..requests import get_sources,get_articles, get_articles_category,search_news
+from ..requests import get_sources,get_articles, get_articles_category
 
 @main.route('/')
 def index():
