@@ -1,8 +1,9 @@
+import os
 import urllib.request,json
 from .models import Articles,Sources
 
 
-apikey =None
+api_key = '1d71fbc2597a4dc5ae9f3f4afe384eee'
 
 BASE_SOURCES_URL = None
 BASE_ARTICLES_URL = None
